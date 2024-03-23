@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  width: 85%;
+  max-width: 960px;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: #262626;
+}
+.ring {
+  position: relative;
+  width: 500pt;
+  height: 500pt;
+  transition: all 0.8s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  transition: 0.5s;
+}
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animate 6s linear infinite;
+}
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animate 4s linear infinite;
+}
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animate2 10s linear infinite;
+}
+.ring:hover i {
+  border: 6px solid var(--clr);
+  filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.heading {
+  position: fixed;
+  z-index: 3;
+  top: 10.5%;
+  text-transform: uppercase;
+  margin-top: 6rem;
+  color: white;
+  @media (min-width: 768px) {
+    font-size: 0.5rem;
+    top: 15%;
+    transform: translateY(0);
+    font-size: 3rem;
+  }
+  padding: 0.1rem;
+}
+.option-created {
+  display: block;
+  color: red;
+}
+#option-form {
+  line-height: 4rem;
+  padding: 10%;
+  justify-content: center;
+  align-items: center;
+  line-gap-override: normal;
+  gap: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  width: min(100vh, 50%);
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 30;
+}
+button {
+  margin: 10px;
+  height: max(3em, 9vh);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    filter: brightness(90%);
+  }
+  text-align: center;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  #option-form {
+    flex-direction: row;
+    font-size: 1.5rem;
+    gap: 10%;
+  }
+  .btn {
+    /* width: 7em; */
+    /* height: 7em; */
+    width: fit-content;
+    height: fit-content;
+  }
+}
+#result {
+  background-color: #ada5a5;
+  padding: 3% 6%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(10px);
+  max-width: 70%;
+  margin-top: 3rem;
+}
+input {
+  display: block;
+  margin: auto;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: black;
+  padding: 1px 0;
+  ::placeholder {
+    color: grey;
+  }
+  @media (min-width: 168px) {
+    font-size: 2rem;
+    overflow: hidden;
+  }
+}
+/*  */
+
+/* */
+button {
+  cursor: pointer;
+  font-size: 100%;
+  line-height: inherit;
+  padding: 0;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+}
+
+#result {
+  top: 85%;
+  left: 45%;
+  position: absolute;
+  background: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset,
+    0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  line-height: 1.4;
+}
